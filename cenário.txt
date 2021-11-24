@@ -1,0 +1,61 @@
+Cenário
+
+Uma empresa de e-commerce paga uma comissão para cada produto vendido em seu marketplace.
+
+O objetivo deste exercício é implementar uma ferramenta que calcule as comissões devido à
+empresa com base nos seguintes requisitos:
+
+• A ferramenta deve ser um aplicativo de console que recebe como parâmetro o caminho para
+um arquivo como primeiro argumento;
+
+• O caminho fornecido aponta para um arquivo texto em formato CSV (.csv), com uma lista de pedidos
+(descritos abaixo);
+
+• Calcula a comissão devida agrupada por Boutique ID;
+
+• A comissão é definida pelo tipo usuário. Assumir que:
+	o 5% para usuário convidado - (G)uest
+	o 10% para (N)ovo usuário
+	o 15% para usuário que (R)etornou
+
+• O resultado é exibido na saída padrão conforme descrito abaixo
+
+Um arquivo CSV com cada pedido feito em um determinado dia tem a seguinte estrutura:
+
+<User_Type>,<Order_ID>,<Boutique_ID>,<TotalOrderPrice>
+
+O programa deve ser um aplicativo de console e aceitar os seguintes argumentos:
+<Path_to_orders_file>: caminho para o arquivo a ser processado
+
+Exemplos:
+• Orders.exe OrderBatch.csv
+• dotnet run OrderBatch.dll orders.csv
+
+
+O programa deve produzir a seguinte saída para o console formatado da seguinte forma:
+
+<Boutique_ID>,<Total_Commission>
+
+Exemplos:
+
+Dado o arquivo de entrada orders.csv:
+
+G,O1000,B10,100
+R,O1001,B11,100
+N,O1002,B10,200
+N,O1003,B10,300
+...
+
+A saída deve ser algo como:
+B10,55.00
+B11,15.00
+...
+
+Para o arquivo orders.csv fornecido, a saída deverá ser a seguinte:
+B05,195.05
+B06,162.53
+B07,165.08
+B08,191.25
+B09,65.00
+B10,465.00
+B11,417.53
